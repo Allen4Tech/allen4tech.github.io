@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[单例模式 vs 类中定义一系列静态方法]]></title>
-    <url>%2F2019%2F09%2F26%2Fsingleton-vs-static-class%2F</url>
-    <content type="text"><![CDATA[The big difference between a singleton and a bunch of static methods is that singletons can implement interfaces (or derive from useful base classes, although that’s less common, in my experience), so you can pass around the singleton as if it were “just another” implementation. 解读：单例模式和在类中定义一系列静态方法最大的区别在于，单例可以实现接口，随时可以替换为其他实现。 C# 单例试实现123456public sealed class Singleton&#123; private static readonly Lazy&lt;Singleton&gt; lazy = new Lazy&lt;Singleton&gt;(() =&gt; new Singleton()); private Singleton() &#123; &#125; public static Singleton Instance &#123; get &#123; return lazy.Value; &#125; &#125;&#125; Java 单例模式实现1234567891011121314public class Singleton &#123; private static Singleton instance; public static Singleton getInstance() &#123; if (instance == null) &#123; synchronized (Singleton.class) &#123; if(instance==null)&#123; instance=new Singleton(); &#125; &#125; &#125; return instance; &#125; &#125;]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-        <tag>单例模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[只写答案得 1 分？]]></title>
     <url>%2F2017%2F07%2F25%2Fonly-one-score%2F</url>
     <content type="text"><![CDATA[上学的时候理科老师改卷子有个不成文的规则，大题只写答案得 1 分，如果过程全对只是最后答案错了扣 1 分。那时候傻，一直觉得这样改卷子很有道理，虽然答案错了，但是过程都有，证明人家会，就应该拿到大部分分数，只写了答案的可能是抄的，给1分已经很给面子了。 毕业后工作多年发现，这简直就是扯淡。任何事情做成了就是做成了，没做成就是没做成，0 或 1，没有中间状态。篮球运动员后场拿球过前场，各种急停，变相，过了对方所有防守球员，以一个完美的动作来了一个拉杆上篮，然而球没有进，你不能说我之前做的多么完美，只是最后的上篮偏了一点，给我 1.5 分吧。“没有功劳也有苦劳” 这种话在现在这个社会等同于放屁。大家都很忙，谁会在意你做了多少努力，大家在意的只是最终的结果，成了还是没成。对努力过程的生动描述感动的只是你自己，who care?]]></content>
